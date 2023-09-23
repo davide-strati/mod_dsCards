@@ -11,6 +11,8 @@
 
 defined('_JEXEC') or die;
 
+use Joomla\CMS\Factory;
+
 $modId = 'mod-custom' . $module->id;
 ?>
 
@@ -23,11 +25,11 @@ $modId = 'mod-custom' . $module->id;
     <div class="cards__container d-flex">
         <?php foreach ($cardsData as $cardData) : ?>
             <div class="card__container d-flex flex-column align-items-center">
-                <img src="<?= $cardData['iconUrl']; ?>" width="<?= $cardData['iconWidth']; ?>" height="<?= $cardData['iconHeight']; ?>" alt="<?= $cardData['alttext']; ?>" loading="lazy">
-                <h5 class="text-center"><?= $cardData['cardTitle']; ?></h5>
-                <p><?= $cardData['cardContent']; ?></p>
+                <img src="<?= $cardData['iconUrl']; ?>" width="<?= $cardData['iconWidth']; ?>" height="<?= $cardData['iconHeight']; ?>" alt="<?= $cardData['alttext']; ?>" class="card__image" loading="lazy">
+                <h5 class="card__title"><?= $cardData['cardTitle']; ?></h5>
+                <p class="card__content"><?= $cardData['cardContent']; ?></p>
                 <?php if ($cardData['showButton'] == 1) : ?>
-                    <a href="<?= $cardData['buttonLink']; ?>" class="btn <?= $cardData['buttonStyle']; ?>">Segui</a>
+                    <a href="<?= $cardData['buttonLink']; ?>" class="card__btn btn <?= $cardData['buttonStyle']; ?>">Segui</a>
                 <?php endif; ?>
             </div>
         <?php endforeach; ?>
