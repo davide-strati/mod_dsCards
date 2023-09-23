@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.8" client="site" method="upgrade">
+	<name>MOD_DSCARDS</name>
+	<creationDate>20-09-2023</creationDate>
+	<author>Davide Strati</author>
+	<authorEmail>developer@davide-strati.it</authorEmail>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<version>1.0</version>
+	<description>MOD_DSCARDS_XML_DESCRIPTION</description>
+	<namespace>Joomla\Module\DsCards</namespace>
+
+	<files>
+		<filename module="mod_dscards">mod_dscards.php</filename>
+		<folder>tmpl</folder>
+		<folder>language</folder>
+		<folder>Helper</folder>
+		<filename>mod_dscards.xml</filename>
+	</files>FOO
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="intro" type="editor" label="MOD_DSCARD_INTRO_LABEL" filter="raw" buttons="true" editor="tinymce" />
+			</fieldset>
+			<fieldset name="Cards" label="Cards">
+				<field name="cardElements" type="subform" label="MOD_DSCARD_CARDELEMENTS_LABEL" description="MOD_DSCARD_CARDELEMENTS_DESC" multiple="true" min="1">
+					<form>
+						<field name="cardIcon" type="media" label="MOD_DSCARD_ICON_LABEL"/>
+						<field name="alttext" type="text" label="MOD_DSCARD_ALT_TEXT_LABEL" />
+						<field name="cardTitle" type="text" label="MOD_DSCARD_TITLE_LABEL" />
+						<field name="cardContent" type="textarea" label="MOD_DSCARD_CONTENT_LABEL" cols="40" rows="8" />
+						<field name="showButton" type="radio" default="0" label="MOD_DSCARD_SHOWBUTTON_LABEL" class="btn-group btn-group-yesno">
+							<option value="1">Si</option>
+							<option value="0">No</option>
+						</field>
+						<field name="buttonStyle" type="text" label="MOD_DSCARD_BUTTON_STYLE_LABEL" showon="showButton:1" />
+						<field name="buttonURL" type="url" label="MOD_DSCARD_BUTTON_URL_LABEL" description="" size="10" showon="showButton:1" />
+					</form>
+				</field>
+			</fieldset>
+			<fieldset name="options" label="COM_MODULES_BASIC_FIELDSET_LABEL">
+				<field name="prepare_content" type="radio" layout="joomla.form.field.radio.switcher" label="MOD_CUSTOM_FIELD_PREPARE_CONTENT_LABEL" description="MOD_CUSTOM_FIELD_PREPARE_CONTENT_DESC" default="0" filter="integer">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="backgroundimage" type="media" label="MOD_CUSTOM_FIELD_BACKGROUNDIMAGE_LABEL" />
+			</fieldset>
+			<fieldset name="advanced">
+				<field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" class="form-select" validate="moduleLayout" />
+
+				<field name="moduleclass_sfx" type="textarea" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" rows="3" validate="CssIdentifier" />
+
+				<field name="cache" type="list" label="COM_MODULES_FIELD_CACHING_LABEL" default="1" filter="integer" validate="options">
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field name="cache_time" type="number" label="COM_MODULES_FIELD_CACHE_TIME_LABEL" default="900" filter="integer" />
+
+				<field name="cachemode" type="hidden" default="static">
+					<option value="static"></option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>
