@@ -15,7 +15,8 @@
 		<folder>language</folder>
 		<folder>Helper</folder>
 		<filename>mod_dscards.xml</filename>
-	</files>FOO
+		<filename>tmpl/mod_dscards.css</filename>
+	</files>
 
 	<config>
 		<fields name="params">
@@ -29,7 +30,7 @@
 						<field name="alttext" type="text" label="MOD_DSCARD_ALT_TEXT_LABEL" />
 						<field name="cardTitle" type="text" label="MOD_DSCARD_TITLE_LABEL" />
 						<field name="cardContent" type="textarea" label="MOD_DSCARD_CONTENT_LABEL" cols="40" rows="8" />
-						<field name="showButton" type="radio" default="0" label="MOD_DSCARD_SHOWBUTTON_LABEL" class="btn-group btn-group-yesno">
+						<field name="showButton" type="radio" default="0" label="MOD_DSCARD_SHOW_BUTTON_LABEL" class="btn-group btn-group-yesno">
 							<option value="1">Si</option>
 							<option value="0">No</option>
 						</field>
