@@ -47,6 +47,14 @@ class DsCardsHelper
                 $buttonStyle = '';
                 $buttonLink = '';
             }
+            
+            $target = $cardElements->buttonTarget;
+            if ($target == 0) {
+                $buttonTarget = '_self';
+            } else {
+                $buttonTarget = '_blank';
+            }
+
 
             $cardsData[] = [
                 'iconUrl' => $iconUrl,
@@ -55,8 +63,11 @@ class DsCardsHelper
                 'alttext' => $cardElements->alttext,
                 'cardTitle' => $cardElements->cardTitle,
                 'cardContent' => $cardElements->cardContent,
+                'showButton' => $cardElements->showButton,
                 'buttonLink' => $buttonLink,
                 'buttonStyle' => $cardElements->buttonStyle,
+                'buttonText' => $cardElements->buttonText,
+                'buttonTarget' => $buttonTarget,
             ];
         }
 

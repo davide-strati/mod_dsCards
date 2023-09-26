@@ -1,12 +1,11 @@
 .cards__container {
-    padding: var(--space-4xl);
+    padding: var(--space-m-4xl) 0;
     gap: var(--space-4xl);
+    flex-flow: column wrap;
 }
 
 .intro {
-    max-width: 70%;
-    margin: 0 auto;
-    padding-bottom: var(--space-4xl);
+    padding-bottom: var(--space-xl-4xl);
 }
 
 
@@ -21,4 +20,23 @@
 }
 .card__content, .card__title {
     text-align: center;
+}
+
+
+@media screen and (min-width: 768px) {
+    .cards__container {
+        flex-flow: row wrap;
+    }
+    .card__container {
+        flex: 0 0 47%;
+    }
+}
+
+@media screen and (min-width: 1420px) {
+    .cards__container {
+        flex-flow: row wrap;
+    }
+    .card__container {
+        flex: 1 1 0;
+    }
 }

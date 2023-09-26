@@ -11,10 +11,9 @@
 
 defined('_JEXEC') or die;
 
-use Joomla\CMS\Factory;
-
 $modId = 'mod-custom' . $module->id;
 ?>
+
 
 <div id="<?= $modId; ?>" class="dsCards cards--servizi">
     <?php  if(isset($intro)) { ?>
@@ -27,9 +26,9 @@ $modId = 'mod-custom' . $module->id;
             <div class="card__container d-flex flex-column align-items-center">
                 <img src="<?= $cardData['iconUrl']; ?>" width="<?= $cardData['iconWidth']; ?>" height="<?= $cardData['iconHeight']; ?>" alt="<?= $cardData['alttext']; ?>" class="card__image" loading="lazy">
                 <h5 class="card__title"><?= $cardData['cardTitle']; ?></h5>
-                <p class="card__content"><?= $cardData['cardContent']; ?></p>
+                <div class="card__content"><?= $cardData['cardContent']; ?></div>
                 <?php if ($cardData['showButton'] == 1) : ?>
-                    <a href="<?= $cardData['buttonLink']; ?>" class="card__btn btn <?= $cardData['buttonStyle']; ?>">Segui</a>
+                    <a href="<?= $cardData['buttonLink']; ?>" class="card__btn btn <?= $cardData['buttonStyle']; ?>" target="<?= $cardData['buttonTarget'] ?>"><?= $cardData['buttonText']; ?></a>
                 <?php endif; ?>
             </div>
         <?php endforeach; ?>

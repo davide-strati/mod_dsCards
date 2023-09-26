@@ -29,13 +29,19 @@
 						<field name="cardIcon" type="media" label="MOD_DSCARD_ICON_LABEL"/>
 						<field name="alttext" type="text" label="MOD_DSCARD_ALT_TEXT_LABEL" />
 						<field name="cardTitle" type="text" label="MOD_DSCARD_TITLE_LABEL" />
-						<field name="cardContent" type="textarea" label="MOD_DSCARD_CONTENT_LABEL" cols="40" rows="8" />
+						<field name="cardContent" type="editor" label="MOD_DSCARD_CONTENT_LABEL" buttons="true" filter="safehtml" />
 						<field name="showButton" type="radio" default="0" label="MOD_DSCARD_SHOW_BUTTON_LABEL" class="btn-group btn-group-yesno">
 							<option value="1">Si</option>
 							<option value="0">No</option>
 						</field>
 						<field name="buttonStyle" type="text" label="MOD_DSCARD_BUTTON_STYLE_LABEL" showon="showButton:1" />
-						<field name="buttonURL" type="url" label="MOD_DSCARD_BUTTON_URL_LABEL" description="" size="10" showon="showButton:1" />
+						<field name="buttonURL" type="url" label="MOD_DSCARD_BUTTON_URL_LABEL" size="10" showon="showButton:1" />
+						<field name="buttonText" type="text" label="MOD_DSCARD_BUTTON_TXT_LABEL" showon="showButton:1" />
+						<field name="buttonAlt" type="text" label="MOD_DSCARD_BUTTON_ALT_LABEL" showon="showButton:1" />
+						<field name="buttonTarget" type="list" label="MOD_DSCARD_BUTTON_TARGET_LABEL" showon="showButton:1">
+							<option value="0">Self</option>
+							<option value="1">Blank</option>
+						</field>
 					</form>
 				</field>
 			</fieldset>
